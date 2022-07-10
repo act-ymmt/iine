@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* reactionButton */
+
+.wrap{
+position: relative;
+}
+
+.heart {
+        //width: 100px;
+        //height: 100px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        //background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+        background: url(../img_template/apple_animation.png) no-repeat;
+        background-position: 0 0;
+        cursor: pointer;
+        //animation: fave-heart 1s steps(27);
+      }
+
+      .heart:hover {
+        //background-position: -2700px 0;
+        background-position: -1350px 0;
+        transition: background 1s steps(27);
+      }
+      .heart {
+        border: solid 1px;
+        background-size:1350px; //actual background size 2800px
+       // background-size:50px; //actual background size 2800px
+        }
+
+      @keyframes fave-heart {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          //background-position: -2700px 0;
+          background-position: -1350px 0;
+        }
+      }
+      
+      

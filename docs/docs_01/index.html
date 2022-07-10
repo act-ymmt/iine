@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="common/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="common/css/test.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="app">
+    <div class="block">
+      <input type="radio" name="resCount" value="3" data-load_res-count="" data-set_res-count="" checked>
+      <label><a href="#"></a></label>
+    </div><!-- / .block -->
+    <div class="block">
+      <input type="radio" name="resCount" value="1" data-load_res-count="" data-set_res-count="">
+      <label><a href="#"></a></label>
+    </div><!-- / .block -->
+    <div class="block">
+      <input type="radio" name="resCount" value="2" data-load_res-count="" data-set_res-count="">
+      <label><a href="#"></a></label>
+    </div><!-- / .block -->
+    <div class="block">
+      <input type="radio" name="resCount" value="3" data-load_res-count="" data-set_res-count="">
+      <label><a href="#"></a></label>
+    </div><!-- /.block -->
+</div>
+
+
+
+<a href="#" class="btn02 rotateback"><span>7-1-10 くるっと回転（奥に）</span><span>回転後（奥に）</span></a>
+
+
+<script>
+
+$(function(){
+  var status = $('[name="resCount"]:checked').val();
+  $('[name="resCount"]').click(function(){
+    if($(this).val() == status) {
+      $(this).prop("checked", false);
+      status = false;
+    } else {
+      $(this).prop("checked", true);
+      status = $(this).val();
+      console.log(status);
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

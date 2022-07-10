@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* reactionButton */
+.wrap {
+  position: relative;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../img_template/apple_animation.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.heart:hover {
+  background-position: -1350px 0;
+  transition: background 1s steps(27);
+}
+
+.heart {
+  border: solid 1px;
+  background-size: 1350px;
+}
+
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1350px 0;
+  }
+}
+/*== ボタン共通設定 */
+.btn02 {
+  /*背景の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  height: 50px;
+  height: 100px;
+  line-height: 50px;
+  text-align: center;
+  outline: none;
+}
+
+/*ボタン内側の設定*/
+.btn02 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* 重なりを3Dで表示 */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* アニメーションの設定 数字が少なくなるほど早く回転 */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*== くるっと回転（奥に） */
+/* 回転前 */
+.rotateback span:nth-child(1) {
+  background: #fff;
+  color: #000;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  /*はじめは回転なし*/
+  -webkit-transform-origin: 0 50% -25px;
+  transform-origin: 0 50% -25px;
+  /* 回転する起点 */
+  -webkit-transform-origin: 0 50% -50px;
+  transform-origin: 0 50% -50px;
+  /* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(1) {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  /* X軸に90度回転 */
+}
+
+/* 回転後 */
+.rotateback span:nth-child(2) {
+  background: #000;
+  color: #fff;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  /*はじめはX軸に-90度回転*/
+  -webkit-transform-origin: 0 50% -25px;
+  transform-origin: 0 50% -25px;
+  /* 回転する起点 */
+  -webkit-transform-origin: 0 50% -50px;
+  transform-origin: 0 50% -50px;
+  /* 回転する起点 */
+}
+
+/*hoverをした後の形状*/
+.rotateback:hover span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  /* X軸に0度回転 */
+}
+
+/*========= レイアウトのためのCSS ===============*/
+body {
+  vertical-align: middle;
+  padding: 100px 0;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+/*# sourceMappingURL=test.css.map */ /*# sourceMappingURL=test.css.map *//*# sourceMappingURL=test.css.map */
