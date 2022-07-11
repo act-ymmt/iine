@@ -11,7 +11,8 @@
 </head>
 
 <body>
-  
+  <script>
+  /*  
   <div id="app">
     <div class="block">
       <input type="radio" name="resCount" value="3" data-load_res-count="" data-set_res-count="" checked>
@@ -30,11 +31,12 @@
       <label><a href="#"></a></label>
     </div><!-- /.block -->
 </div>
+*/
+</script>
 
-
-
+<!--
 <a href="#" class="btn02 rotateback"><span>7-1-10 くるっと回転（奥に）</span><span>回転後（奥に）</span></a>
-
+-->
 
 <script>
 
@@ -54,11 +56,31 @@ $(function(){
 
 </script>
 
+
 <article></article>
 
   <article class="wrap">
-  <div class="heart"></div>
+  <div class="heart nice_button"></div>
 </article>
+
+
+
+<script>
+	// いいねカウント処理（フロントエンド側）
+	//--------------------------------------------------
+	jQuery(function($){
+	//--------------------------------------------------
+		const btn = $('.nice_button');
+
+		btn.click(function () {
+			//box.toggleClass('active');
+			$(this).toggleClass('active');
+		});
+console.log(btn);	
+	//--------------------------------------------------
+	});// END JQ
+	//--------------------------------------------------
+</script>
 
 </body>
 </html>
