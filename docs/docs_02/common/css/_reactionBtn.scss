@@ -2,36 +2,49 @@
 
 /* reactionButton */
 
-.wrap{
-position: relative;
-}
+  .wrap{
+    position: relative;
+  }
 
-.heart {
-        //width: 100px;
-        //height: 100px;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        //background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
-        background: url(../img_template/apple_animation.png) no-repeat;
-        background-position: 0 0;
-        cursor: pointer;
-        //animation: fave-heart 1s steps(27);
-      }
+  .heart {
+    //width: 100px;
+    //height: 100px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    //background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+    background: url(../img_template/icon_reaction-A_animation_sprite.png) no-repeat;
+    background-position: 0 0;
+    background-size:1350px 50px; 
+    cursor: pointer;
+    //animation: fave-heart 1s steps(27);
+  }
 
       .heart:hover {
         //background-position: -2700px 0;
-        background-position: -1350px 0;
-        transition: background 1s steps(27);
+        //background-position: -1350px 0;
+  //transition: background 1s steps(27);
+  //@at-rootanimation: fave-heart 1s steps(27);
       }
+
+      $bgImgRatio:0.5;
+      .heart.active {
+        //background-position: -2700px 0;
+        //background-position: -1350px 0;//静的正解 //actual bg position -2700px
+        background-position: calc((-2800px + 100px) * $bgImgRatio) 0;//変数化 //actual bg position -2700px
+        transition: background 1s steps(27);//変化の仕方
+  //animation: fave-heart 1s steps(27);
+      }
+
       .heart {
         border: solid 1px;
-        background-size:1350px; //actual background size 2800px
-       // background-size:50px; //actual background size 2800px
-        }
+        //background-size:1350px; //actual background size 2800px
+        //background-size:1400px; //静的正解 //actual background size 2800px
+        background-size:calc(2800px * $bgImgRatio); //変数化 //actual background size 2800px
+      }
 
       @keyframes fave-heart {
         0% {
@@ -39,7 +52,8 @@ position: relative;
         }
         100% {
           //background-position: -2700px 0;
-          background-position: -1350px 0;
+          //background-position: -1350px 0;// 静的正解
+          background-position: calc((-2800px + 100px) * $bgImgRatio) 0;//変数化 //actual bg position -2700px
         }
       }
       
